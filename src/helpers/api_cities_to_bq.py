@@ -1,6 +1,6 @@
 from pandas import read_csv
 from config import API_CITIES
-from .load import load_to_bigquery
+from src.load import load_to_bigquery
 
 
 # Act as enrichment data
