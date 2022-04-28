@@ -24,3 +24,22 @@ def transform_weather(weather):
     weather = weather.round()  # round all floats
     
     return weather
+
+
+def generate_date_dim(weather):
+    '''Generate time dimension table from `weather: date column`.
+
+    ## Returns
+    `DataFrame` of time dimension.
+    '''
+    date = pd.Series(weather['date'].unique())
+    frame = {
+        'date': date,
+        'day': date.dt.day_name(),
+        'month': date.dt.month_name(),
+        'quarter': date.dt.quarter,
+        'year': date.dt.year
+    }
+
+    time_dim = pd.DataFrame(frame)
+    return time_dim
