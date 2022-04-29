@@ -25,3 +25,5 @@ def load_to_bigquery(df, dataset_id, table_id):
         job_config=job_config, 
         location='eu'
     )  # BigQueryAPI request    
+
+    return load_job
